@@ -1,0 +1,34 @@
+<h1>Dry T-Shirt Contest!</h1>
+
+<div class="log-in" ng-if="!isLoggedIn()" ng-controller="MainCtrl">
+  <button ng-click="logIn()">Please Log In via GitHub</button>
+</div>
+
+<div ng-if="isLoggedIn()" ng-controller="MainCtrl">
+  <form ng-submit="addTrick()">
+    <label>Sell it:</label>
+    <input
+      type="text"
+      name="description"
+      ng-model="description"
+      placeholder="e.g.– Did you know you can set DOM breakpoints?!"
+    >
+    <input type="submit">
+  </form>
+
+  <table>
+    <tr ng-repeat="trick in tricks | orderByPriority | orderBy:voteCount:true">
+    <td class="first">
+      <img ng-src="{{trick.avatar_url}}" width="48" height="48" title="{{trick.username}}">
+    </td>
+    <td class="second">{{trick.description}}</td>
+    <td class="third">
+      <img ng-src="/images/{{trick.shirt}}.png" width="48" height="48"></td>
+    <td class="last">
+      <button ng-show="canVote(trick)" href="javascript:void(0);" ng-click="vote(trick)">Vote!</button>
+      <button ng-show="canComplete(trick)" href="javascript:void(0);" ng-click="complete(trick)">Drilled It!</button>
+      <button ng-show="canRemove(trick)" href="javascript:void(0);" ng-click="remove(trick)">Nope!</button>
+    </td>
+    </tr>
+  </table>
+</div>

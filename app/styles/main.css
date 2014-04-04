@@ -1,0 +1,62 @@
+/* Will be compiled down to a single stylesheet with your sass files */
+body {
+    width: 90%;
+    margin: 0 auto;
+    background: #1d262a;
+    color: white;
+    font-family: "Helvetica", sans-serif;
+    font-size: 18px;
+}
+
+h1 {
+    color: #e92e2e;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 6.4em;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -5px;
+    margin: 25px 0;
+}
+
+table {
+  width: 85%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+tr {
+  border-bottom: 1px solid #f29b32;
+}
+td {
+  text-align: center;
+  padding: 10px 0;
+}
+td.first { width: 15%; }
+td.second { width: 45%; }
+td.third { width: 15%; }
+td.last { width: 25%; }
+
+th {
+  font-size: 1.6em;
+  color: #f29b32;
+}
+form {
+  margin: 25px 0;
+  text-align: center;
+}
+button, input[type="submit"] {
+  background: #e5e5e5;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+input[type="text"] {
+  width: 450px;
+  font-size: 15px;
+  line-height: 25px;
+  padding: 3px;
+}
+.log-in {
+  text-align: center;
+}
